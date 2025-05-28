@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
 :root {
+  /* Original theme variables */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Job Request Form Theme Variables */
+  --primary-color: #3B82F6;        /* Main primary color (blue) */
+  --secondary-color: #E5E7EB;      /* Secondary color (light gray) */
+  --accent-color: #10B981;         /* Accent color (green) */
+  --text-color: #000000;           /* Text color (black) */
+  --bg-color: #F3F4F6;            /* Background color */
+  --card-bg: #FFFFFF;             /* Card background */
+  --sidebar-gradient: linear-gradient(to bottom, #DBEAFE, #E0E7FF, #FCE7F3);
+  
+  /* Additional UI Colors */
+  --border-color: #D1D5DB;         /* Border color */
+  --hover-color: #F9FAFB;          /* Hover background */
+  --focus-color: #3B82F6;          /* Focus outline color */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color */
 }
 
 @theme inline {
@@ -14,8 +30,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Original dark theme */
     --background: #0a0a0a;
     --foreground: #ededed;
+    
+    /* Job Request Form Dark Theme */
+    --primary-color: #60A5FA;        /* Lighter blue for dark mode */
+    --secondary-color: #374151;      /* Dark gray */
+    --accent-color: #34D399;         /* Light green */
+    --text-color: #FFFFFF;           /* White text for dark mode */
+    --bg-color: #111827;            /* Dark background */
+    --card-bg: #1F2937;             /* Dark card background */
+    --sidebar-gradient: linear-gradient(to bottom, #1E3A8A, #5B21B6, #BE185D);
+    
+    /* Dark mode UI adjustments */
+    --border-color: #4B5563;         /* Darker border */
+    --hover-color: #374151;          /* Dark hover */
+    --focus-color: #60A5FA;          /* Light blue focus */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Darker shadow */
   }
 }
 
@@ -23,4 +55,50 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Job Request Form Specific Styles */
+.job-form-container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.job-form-sidebar {
+  background: var(--sidebar-gradient);
+}
+
+.job-form-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.job-form-input {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+}
+
+.job-form-input:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.job-form-button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.job-form-button:hover {
+  opacity: 0.8;
+}
+
+.job-form-nav-item {
+  color: var(--text-color);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.job-form-nav-item:hover {
+  background-color: var(--hover-color);
 }
